@@ -33,14 +33,13 @@ public class Tacka {
 	}
 	
 	public double udaljenost (Tacka t){
-		double rez = 0;
+
+		int dx = this.x - t.x;
+		int dy = this.getY() - t.getY();
+		double d = Math.sqrt(dx * dx + dy * dy);
+		return d;
 		
-		int a = x - t.getX();
-		int b = y - t.getY();
-		
-		rez = Math.sqrt(a*b);
-		
-		return rez;
+
 	}
 	
 }
