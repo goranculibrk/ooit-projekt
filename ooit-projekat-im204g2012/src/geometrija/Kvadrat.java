@@ -2,7 +2,7 @@ package geometrija;
 
 import java.awt.Graphics;
 
-public class Kvadrat extends Oblik{
+public class Kvadrat extends PovrsinskiOblik{
 
 	/* Varijable */
 	
@@ -35,7 +35,7 @@ public class Kvadrat extends Oblik{
 	}
 	
 	public Kvadrat (Tacka iGoreLevo, int iStranica, String iBoja){
-		super(iBoja);
+		setBoja(iBoja);
 		tGoreLevo = iGoreLevo;
 		stranica = iStranica;
 	}
@@ -88,5 +88,22 @@ public class Kvadrat extends Oblik{
 		g.drawLine(tGoreLevo.getX()+stranica, tGoreLevo.getY(), tGoreLevo.getX()+stranica, tGoreLevo.getY()+stranica);
 		g.drawLine(tGoreLevo.getX()+stranica, tGoreLevo.getY()+stranica, tGoreLevo.getX(), tGoreLevo.getY()+stranica);
 		g.drawLine(tGoreLevo.getX(), tGoreLevo.getY()+stranica, tGoreLevo.getX(), tGoreLevo.getY());
+	}
+
+	@Override
+	public void popuni(Graphics g) {
+		
+		g.setColor(pronadjiBoju(getBojaUnutrasnjosti()));
+		g.fillRect(tGoreLevo.getX()-1, tGoreLevo.getY()-1, stranica-1, stranica-1);
+		
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean sadrzi(int x, int y) {
+		// TODO Auto-generated method stub
+		if(x >= tGoreLevo.getX() && x <= tGoreLevo.getX()+stranica && y >= tGoreLevo.getY() && y <= tGoreLevo.getY()+stranica) return true;
+		else return false;
 	}
 }

@@ -2,7 +2,7 @@ package geometrija;
 
 import java.awt.Graphics;
 
-public class Krug extends Oblik{
+public class Krug extends PovrsinskiOblik{
 
 	/* Varijable */
 	
@@ -33,7 +33,7 @@ public class Krug extends Oblik{
 	}
 	
 	public Krug (Tacka iCentar, int iPoluprecnik, String iBoja){
-		super(iBoja);
+		setBoja(iBoja);
 		tCentar = iCentar;
 		poluprecnik = iPoluprecnik;
 	}
@@ -66,6 +66,23 @@ public class Krug extends Oblik{
 	public void crtajSe(Graphics g){
 		g.setColor(pronadjiBoju(getBoja()));
 		g.drawOval(tCentar.getX()-poluprecnik, tCentar.getY()-poluprecnik, 2*poluprecnik, 2*poluprecnik);
+	}
+	@Override
+	public void popuni(Graphics g) {
+		// TODO Auto-generated method stub
+		g.setColor(pronadjiBoju(getBojaUnutrasnjosti()));
+		g.fillOval(tCentar.getX()-poluprecnik-1, tCentar.getY()-poluprecnik-1, 2*poluprecnik-1, 2*poluprecnik-1);
+		
+	}
+	@Override
+	public boolean sadrzi(int x, int y) {
+		// TODO Auto-generated method stub
+		Tacka mestoKlika = new Tacka(x, y);
+		double d = mestoKlika.udaljenost(tCentar);
+		
+		if (d <= poluprecnik) return true;
+		
+		else return false;
 	}
 	
 }
