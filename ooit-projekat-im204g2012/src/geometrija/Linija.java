@@ -1,5 +1,7 @@
 package geometrija;
 
+import java.awt.Graphics;
+
 public class Linija extends Oblik {
 
 	/* Varijable */
@@ -77,6 +79,11 @@ public class Linija extends Oblik {
 			else return false;
 		}else return false;
 	}
+	
+	public void crtajSe(Graphics g){
+		g.setColor(pronadjiBoju(getBoja()));
+		g.drawLine(tPocetna.getX(), tPocetna.getY(), tKrajnja.getX(), tKrajnja.getY());
+	}	
 	
 }
 

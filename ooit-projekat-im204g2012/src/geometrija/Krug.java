@@ -1,5 +1,7 @@
 package geometrija;
 
+import java.awt.Graphics;
+
 public class Krug extends Oblik{
 
 	/* Varijable */
@@ -59,6 +61,11 @@ public class Krug extends Oblik{
 			if(tCentar.equals(pomocni.getCentar()) && poluprecnik == pomocni.getPoluprecnik()) return true;
 			else return false;
 		}else return false;
+	}
+	
+	public void crtajSe(Graphics g){
+		g.setColor(pronadjiBoju(getBoja()));
+		g.drawOval(tCentar.getX()-poluprecnik, tCentar.getY()-poluprecnik, 2*poluprecnik, 2*poluprecnik);
 	}
 	
 }

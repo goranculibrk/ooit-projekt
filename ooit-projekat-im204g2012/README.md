@@ -94,3 +94,19 @@
 3. U klasi `Krug` preklopiti metodu `public boolean equals(Object obj)` tako da vraća `true` ukoliko tačke imaju isti centar i poluprečnik.
 4. U klasi `Kvadrat` preklopiti metodu `public boolean equals(Object obj)` tako da vraća `true` ukoliko tačke imaju istu gornju levu tačku i stranicu.
 5. U klasi `Pravougaonik` preklopiti metodu `public boolean equals(Object obj)` tako da vraća `true` ukoliko tačke imaju istu gornju levu tačku, širinu i visinu.
+
+# Vežba 10 #
+
+1. Klasu `Oblik` modifikovati tako da bude apstraktna klasa. Dodati apstraktnu metodu `public void crtajSe(Graphics g)`.
+2. U klasi `Oblik` dodati metodu `public static Color pronadjiBoju(String boja)` koja za prosleđeni string vrati boju kojom se crta oblik. Na primer, kada se metodi prosledi parametar `crna` ona treba da vrati `Color.BLACK`. Implementirati metodu tako da radi za boje: crna, bela, crvena, plava, zuta i zelena.
+3. Preklopiti metodu `public void crtajSe(Graphics g)` u svim klasama izvedenim iz klase `Oblik`, saglasno načinu iscrtavanja svake od klasa. Prilikom crtanja koristiti boju koja odgovara vrednosti varijable instance `boja`. Default vrednost varijable instance `boja` treba da bude `crna`.
+4. Testirati iscrtavanja oblika pomoću klase `Crtez`.
+
+# Vežba 11 #
+
+1. Kreirati apstraktnu klasu `PovrsinskiOblik` koja je izvedena iz klase oblik i ima svoju varijablu `private String bojaUnutrasnjosti` koja je po defaultu postavljena na vrednost `bela`.
+2. Implementirati metode pristupa za varijablu instance `bojaUnutrasnjosti`.
+3. Dodati apstraktnu metodu `public abstract void popuni(Graphics g)` koja treba da oboji unutrašnjost površinskog oblika bojom koja odgovara vrednosti varijable instance `bojaUnutrasnjosti`.
+4. Dodati apstraktnu metodu `public abstract boolean sadrzi(int x, int y)` koja treba da detektuje da li površinski oblik sadrži mesto čije su koordinate `x` i `y` zadate.
+5. dodati apstraktne metode `public abstract double povrsina()` i `public abstract double obim()`.
+6. Modifikovati klase `Krug` i `Kvadrat` tako da budu izvedene iz klase `PovrsinskiOblik`. Implementirati metode koje nedostaju ili korigovati postojeće saglasno nasleđenim metodama.

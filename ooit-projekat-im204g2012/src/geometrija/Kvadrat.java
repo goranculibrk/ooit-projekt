@@ -1,5 +1,7 @@
 package geometrija;
 
+import java.awt.Graphics;
+
 public class Kvadrat extends Oblik{
 
 	/* Varijable */
@@ -78,5 +80,13 @@ public class Kvadrat extends Oblik{
 			if(tGoreLevo.equals(pomocni.gettGoreLevo()) && stranica == pomocni.getlStranica()) return true;
 			else return false;
 		}else return false;
+	}
+	
+	public void crtajSe(Graphics g){
+		g.setColor(pronadjiBoju(getBoja()));
+		g.drawLine(tGoreLevo.getX(), tGoreLevo.getY(), tGoreLevo.getX()+stranica, tGoreLevo.getY());
+		g.drawLine(tGoreLevo.getX()+stranica, tGoreLevo.getY(), tGoreLevo.getX()+stranica, tGoreLevo.getY()+stranica);
+		g.drawLine(tGoreLevo.getX()+stranica, tGoreLevo.getY()+stranica, tGoreLevo.getX(), tGoreLevo.getY()+stranica);
+		g.drawLine(tGoreLevo.getX(), tGoreLevo.getY()+stranica, tGoreLevo.getX(), tGoreLevo.getY());
 	}
 }

@@ -1,5 +1,7 @@
 package geometrija;
 
+import java.awt.Graphics;
+
 public class Tacka extends Oblik{
 
 	/* Varijable */
@@ -66,6 +68,12 @@ public class Tacka extends Oblik{
 			if (x == pomocna.getX() && y == pomocna.getY() && this.getBoja() == pomocna.getBoja()) return true;
 			else return false;
 		}else return false;
+	}
+	@Override
+	public void crtajSe(Graphics g) {
+		g.setColor(pronadjiBoju(getBoja()));
+		g.drawLine(x-1, y-1, x+1, y+1);
+		g.drawLine(x+1, y-1, x-1, y+1);
 	}
 	
 }
