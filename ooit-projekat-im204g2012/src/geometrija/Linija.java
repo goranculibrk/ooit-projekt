@@ -70,4 +70,49 @@ public class Linija extends Oblik {
 		return s;
 	}
 	
+	public boolean equals(Object obj){
+		if(obj instanceof Linija){
+			Linija pomocna = (Linija) obj;
+			if(tPocetna.equals(pomocna.getPocetna()) && tKrajnja.equals(pomocna.getKrajnja()) && this.getBoja() == pomocna.getBoja()) return true;
+			else return false;
+		}else return false;
+	}
+	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

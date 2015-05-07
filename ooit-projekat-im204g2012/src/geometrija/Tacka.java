@@ -60,4 +60,12 @@ public class Tacka extends Oblik{
 		return s;
 	}
 	
+	public boolean equals(Object obj){
+		if(obj instanceof Tacka){
+			Tacka pomocna = (Tacka) obj;
+			if (x == pomocna.getX() && y == pomocna.getY() && this.getBoja() == pomocna.getBoja()) return true;
+			else return false;
+		}else return false;
+	}
+	
 }

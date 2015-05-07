@@ -70,7 +70,14 @@ public class Pravougaonik extends Kvadrat {
 	public String toString(){
 		String s = "gornji levi ugao = (" + tGoreLevo.getX() + ", " + tGoreLevo.getY() + "), širina = " + sirina + ", visina = " + this.getlStranica();
 		return s;
-		
+	}
+	
+	public boolean equals(Object obj){
+		if(obj instanceof Pravougaonik){
+			Pravougaonik pomocni = (Pravougaonik) obj;
+			if(tGoreLevo.equals(pomocni.tGoreLevo) && stranica == pomocni.getlStranica() && sirina == pomocni.getlSirina()) return true;
+			else return false;
+		}else return false;
 	}
 	
 }

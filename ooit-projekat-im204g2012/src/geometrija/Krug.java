@@ -53,6 +53,12 @@ public class Krug extends Oblik{
 		return s;
 	}
 	
-	
+	public boolean equals(Object obj){
+		if(obj instanceof Krug){
+			Krug pomocni = (Krug) obj;
+			if(tCentar.equals(pomocni.getCentar()) && poluprecnik == pomocni.getPoluprecnik()) return true;
+			else return false;
+		}else return false;
+	}
 	
 }

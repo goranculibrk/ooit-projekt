@@ -72,4 +72,11 @@ public class Kvadrat extends Oblik{
 		
 	}
 
+	public boolean equals(Object obj){
+		if(obj instanceof Kvadrat){
+			Kvadrat pomocni = (Kvadrat) obj;
+			if(tGoreLevo.equals(pomocni.gettGoreLevo()) && stranica == pomocni.getlStranica()) return true;
+			else return false;
+		}else return false;
+	}
 }

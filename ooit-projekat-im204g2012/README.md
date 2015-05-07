@@ -86,3 +86,11 @@
 	2. koji prihvata parametar za inicijalizaciju boje
 4. U klasama koje su direktno izvedene iz klase `Oblik` korigovati konstruktore koji imaju parametar za inicijalizaciju boje tako da u prvom redu konstruktor nadređene klase kako bi se inicijalizovala varijabla `boja#`.
 5. U klasi `Pravougaonik` preimenovati varijablu `private int sirina`. Gde je potrebno promeniti specifikator pristupa varijablama u klasi `Kvadrat` sa `private` na `protected`.
+
+# Vežba 9 #
+
+1. U klasi `Tacka` preklopiti metodu `public boolean equals(Object obj)` tako da vraća `true` ukoliko tačke imaju istu boju i koordinate.
+2. U klasi `Linija` preklopiti metodu `public boolean equals(Object obj)` tako da vraća `true` ukoliko tačke imaju istu boju i istu početnu i krajnju tačku.
+3. U klasi `Krug` preklopiti metodu `public boolean equals(Object obj)` tako da vraća `true` ukoliko tačke imaju isti centar i poluprečnik.
+4. U klasi `Kvadrat` preklopiti metodu `public boolean equals(Object obj)` tako da vraća `true` ukoliko tačke imaju istu gornju levu tačku i stranicu.
+5. U klasi `Pravougaonik` preklopiti metodu `public boolean equals(Object obj)` tako da vraća `true` ukoliko tačke imaju istu gornju levu tačku, širinu i visinu.
