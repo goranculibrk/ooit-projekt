@@ -76,3 +76,13 @@
 6. U klasi `Kvadrat` preklopiti metodu `public String toString()` tako da stanje objekta reprezentuje na sledeći način: `gornji levi ugao = (xGLU, yGLU), stranica = duzinaStranice`
 7. U klasi `Pravougaonik` preklopiti metodu `public String toString()` tako da stanje objekta reprezentuje na sledeći način: `gornji levi ugao = (xGLU, yGLU), širina = sirina, visina = visina`
 8. U klasi `Krug` preklopiti metodu `public String toString()` tako da stanje objekta reprezentuje na sledeći način: `centar = (xCentra, yCentra), poluprečnik = poluprecnik`
+
+# Vežba 8 #
+
+1. Dodati novi klasu `Oblik`. Modifikovati klase `Tacka`, `Linija`, `Krug`, `Kvadrat` tako da budu izvedene iz klase `Oblik`. Modifikovati klasu `Pravougaonik` takoda bude izvedena iz klase `Kvadrat`.
+2. U klasu `Oblik` prebaciti varijablu `private String boja` i njene metode pristupa iz svih izvedenih klasa.
+3. U klasi `Oblik` implementirati dva konstruktora:
+	1. koji nema parametara i ne radi ništa
+	2. koji prihvata parametar za inicijalizaciju boje
+4. U klasama koje su direktno izvedene iz klase `Oblik` korigovati konstruktore koji imaju parametar za inicijalizaciju boje tako da u prvom redu konstruktor nadređene klase kako bi se inicijalizovala varijabla `boja#`.
+5. U klasi `Pravougaonik` preimenovati varijablu `private int sirina`. Gde je potrebno promeniti specifikator pristupa varijablama u klasi `Kvadrat` sa `private` na `protected`.

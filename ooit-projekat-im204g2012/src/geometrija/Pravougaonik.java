@@ -1,11 +1,11 @@
 package geometrija;
 
-public class Pravougaonik {
+public class Pravougaonik extends Kvadrat {
 
+	/* Varijable */
+	
 	private int sirina;
-	private int visina;
 	private Tacka tGoreLevo;
-	private String boja;
 	
 	/* Get Set metode */
 	
@@ -15,49 +15,36 @@ public class Pravougaonik {
 	public void setlSirina(int lSirina) {
 		this.sirina = lSirina;
 	}
-	public int getlVisina() {
-		return visina;
-	}
-	public void setlVisina(int lVisina) {
-		this.visina = lVisina;
-	}
+
 	public Tacka gettGoreLevo() {
 		return tGoreLevo;
 	}
 	public void settGoreLevo(Tacka tGoreLevo) {
 		this.tGoreLevo = tGoreLevo;
 	}
-	public String getBoja() {
-		return boja;
-	}
-	public void setBoja(String boja) {
-		this.boja = boja;
-	}
+
 	
 	/* Konstruktori */
 	
 	public Pravougaonik(Tacka iGoreLevo, int iVisina, int iSirina) {
-		visina = iVisina;
+		super(iGoreLevo,iVisina);
 		sirina = iSirina;
-		tGoreLevo = iGoreLevo;
 	}
 	
 	public Pravougaonik(Tacka iGoreLevo, int iVisina, int iSirina, String iBoja){
-		visina = iVisina;
+		super(iGoreLevo,iVisina,iBoja);
 		sirina = iSirina;
-		tGoreLevo = iGoreLevo;
-		boja = iBoja;
 	}
 	
 	/* Metode */
 	
 	public double povrsina(){
-		double p = sirina*visina;
+		double p = sirina*this.getlStranica();
 		return p;
 	}
 	
 	public double obim(){
-		double o = 2*sirina + 2*visina;
+		double o = 2*sirina + 2*this.getlStranica();
 		return o;
 	}
 	
@@ -67,7 +54,7 @@ public class Pravougaonik {
 	 */
 	public Linija dijagonala (){
 		int xDoleDesno = (tGoreLevo.getX() + sirina);
-		int yDoleDesno = (tGoreLevo.getY() + visina);
+		int yDoleDesno = (tGoreLevo.getY() + this.getlStranica());
 		
 		Tacka tDoleDesno = new Tacka (xDoleDesno, yDoleDesno);
 		Linija dijagonala = new Linija (tGoreLevo, tDoleDesno);
@@ -81,7 +68,7 @@ public class Pravougaonik {
 	}
 	
 	public String toString(){
-		String s = "gornji levi ugao = (" + tGoreLevo.getX() + ", " + tGoreLevo.getY() + "), širina = " + sirina + ", visina = " + visina;
+		String s = "gornji levi ugao = (" + tGoreLevo.getX() + ", " + tGoreLevo.getY() + "), širina = " + sirina + ", visina = " + this.getlStranica();
 		return s;
 		
 	}

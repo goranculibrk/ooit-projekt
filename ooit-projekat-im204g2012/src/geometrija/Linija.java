@@ -1,10 +1,11 @@
 package geometrija;
 
-public class Linija {
+public class Linija extends Oblik {
 
+	/* Varijable */
+	
 	private Tacka tPocetna;
 	private Tacka tKrajnja;
-	private String boja;
 	
 
 	/* Get Set metode */
@@ -21,12 +22,6 @@ public class Linija {
 	public void setKrajnja(Tacka krajnja) {
 		this.tKrajnja = krajnja;
 	}
-	public String getBoja() {
-		return boja;
-	}
-	public void setBoja(String boja) {
-		this.boja = boja;
-	}
 
 	/* Konstruktori */
 	
@@ -36,9 +31,9 @@ public class Linija {
 	}
 	
 	public Linija(Tacka iPocetna, Tacka iKrajnja, String iBoja){
+		super(iBoja);
 		tPocetna = iPocetna;
 		tKrajnja = iKrajnja;
-		boja = iBoja;
 	}
 	
 	/* Metode */

@@ -1,10 +1,11 @@
 package geometrija;
 
-public class Krug {
+public class Krug extends Oblik{
 
+	/* Varijable */
+	
 	private Tacka tCentar;
 	private int poluprecnik;
-	private String boja;
 	
 	/* Get Set metode */
 	
@@ -20,12 +21,7 @@ public class Krug {
 	public void setPoluprecnik(int poluprecnik) {
 		this.poluprecnik = poluprecnik;
 	}	
-	public String getBoja() {
-		return boja;
-	}
-	public void setBoja(String boja) {
-		this.boja = boja;
-	}
+
 	
 	/* Konstruktori */
 	
@@ -35,9 +31,9 @@ public class Krug {
 	}
 	
 	public Krug (Tacka iCentar, int iPoluprecnik, String iBoja){
+		super(iBoja);
 		tCentar = iCentar;
 		poluprecnik = iPoluprecnik;
-		boja = iBoja;
 	}
 	
 	/* Metode */
@@ -56,6 +52,7 @@ public class Krug {
 		String s = "centar = (" + tCentar.getX() + ", " + tCentar.getY() + "), polupreènik = " + poluprecnik;
 		return s;
 	}
+	
 	
 	
 }

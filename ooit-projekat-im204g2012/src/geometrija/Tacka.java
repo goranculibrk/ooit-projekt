@@ -1,10 +1,11 @@
 package geometrija;
 
-public class Tacka {
+public class Tacka extends Oblik{
+
+	/* Varijable */
 	
 	private int x;
 	private int y;
-	private String boja;
 	
 	/* Get Set metode */
 		
@@ -20,12 +21,6 @@ public class Tacka {
 	public void setY(int y) {
 		this.y = y;
 	}
-	public String getBoja() {
-		return boja;
-	}
-	public void setBoja(String boja) {
-		this.boja = boja;
-	}
 	
 	/* Konstruktori */
 	
@@ -35,9 +30,9 @@ public class Tacka {
 	}
 	
 	public Tacka(int iX, int iY, String iBoja){
+		super(iBoja);
 		x = iX;
 		y = iY;
-		boja = iBoja;
 	}
 	
 	/* Metode */

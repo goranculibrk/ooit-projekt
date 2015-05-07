@@ -1,10 +1,11 @@
 package geometrija;
 
-public class Kvadrat {
-	private Tacka tGoreLevo;
-	private int stranica;
-	private String boja;
+public class Kvadrat extends Oblik{
+
+	/* Varijable */
 	
+	protected Tacka tGoreLevo;
+	protected int stranica;	
 	
 	/* Get Set metode */
 	
@@ -24,14 +25,6 @@ public class Kvadrat {
 		this.stranica = lStranica;
 	}
 
-	public String getBoja() {
-		return boja;
-	}
-
-	public void setBoja(String boja) {
-		this.boja = boja;
-	}
-
 	/* Konstruktori */
 	
 	public Kvadrat (Tacka iGoreLevo, int iStranica){
@@ -40,9 +33,9 @@ public class Kvadrat {
 	}
 	
 	public Kvadrat (Tacka iGoreLevo, int iStranica, String iBoja){
+		super(iBoja);
 		tGoreLevo = iGoreLevo;
 		stranica = iStranica;
-		boja = iBoja;
 	}
 	
 	/* Metode */
