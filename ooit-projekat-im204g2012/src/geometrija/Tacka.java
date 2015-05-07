@@ -58,8 +58,11 @@ public class Tacka {
 		int dy = this.getY() - t.getY();
 		double d = Math.sqrt(dx * dx + dy * dy);
 		return d;
-		
-
+	}
+	
+	public String toString(){
+		String s = "(" + x + ", " + y + ")";
+		return s;
 	}
 	
 }

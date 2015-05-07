@@ -2,7 +2,7 @@ package geometrija;
 
 public class Kvadrat {
 	private Tacka tGoreLevo;
-	private Linija lStranica;
+	private int stranica;
 	private String boja;
 	
 	
@@ -16,12 +16,12 @@ public class Kvadrat {
 		this.tGoreLevo = tGoreLevo;
 	}
 
-	public Linija getlStranica() {
-		return lStranica;
+	public int getlStranica() {
+		return stranica;
 	}
 
-	public void setlStranica(Linija lStranica) {
-		this.lStranica = lStranica;
+	public void setlStranica(int lStranica) {
+		this.stranica = lStranica;
 	}
 
 	public String getBoja() {
@@ -34,41 +34,49 @@ public class Kvadrat {
 
 	/* Konstruktori */
 	
-	public Kvadrat (Tacka iGoreLevo, Linija iStranica){
+	public Kvadrat (Tacka iGoreLevo, int iStranica){
 		tGoreLevo = iGoreLevo;
-		lStranica = iStranica;
+		stranica = iStranica;
 	}
 	
-	public Kvadrat (Tacka iGoreLevo, Linija iStranica, String iBoja){
+	public Kvadrat (Tacka iGoreLevo, int iStranica, String iBoja){
 		tGoreLevo = iGoreLevo;
-		lStranica = iStranica;
+		stranica = iStranica;
 		boja = iBoja;
 	}
 	
 	/* Metode */
 	
 	public double povrsina(){
-		double rez = lStranica.duzina()*lStranica.duzina();
+		double rez = stranica*stranica;
 		return rez;
 	}
 	
 	public double obim(){
-		double rez = 4 * lStranica.duzina();
+		double rez = 4 * stranica;
 		return rez;
 	}
 	
-	public double dijagonala(){
+	public Linija dijagonala(){
 		
-		int xDoleDesno = (int) (tGoreLevo.getX() + lStranica.duzina());
-		int yDoleDesno = (int) (tGoreLevo.getY() + lStranica.duzina());
+		int xDoleDesno =  (tGoreLevo.getX() + stranica);
+		int yDoleDesno =  (tGoreLevo.getY() + stranica);
 		
 		Tacka tDoleDesno = new Tacka (xDoleDesno, yDoleDesno); 
 		
 		Linija d = new Linija (tGoreLevo, tDoleDesno);
 		
-		return d.duzina();
+		return d;
+	}
+	
+	public Tacka centar(){
+		return this.dijagonala().sredina();
 	}
 
-	
+	public String toString(){
+		String s = "gornji levi ugao = (" + tGoreLevo.getX() + ", " + tGoreLevo.getY() + "), stranicaa = " + stranica;
+		return s;
+		
+	}
 
 }

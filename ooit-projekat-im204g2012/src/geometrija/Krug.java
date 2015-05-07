@@ -52,4 +52,10 @@ public class Krug {
 		return o;
 	}
 	
+	public String toString(){
+		String s = "centar = (" + tCentar.getX() + ", " + tCentar.getY() + "), polupreènik = " + poluprecnik;
+		return s;
+	}
+	
+	
 }

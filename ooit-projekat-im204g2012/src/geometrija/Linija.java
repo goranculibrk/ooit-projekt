@@ -43,6 +43,9 @@ public class Linija {
 	
 	/* Metode */
 	
+	/**
+	 * @return - Vraca duinu linije putem metode udaljenost iz klase taèka
+	 */
 	public double duzina()
 	{
 		double rez=0;
@@ -50,9 +53,26 @@ public class Linija {
 		return rez;
 	}
 	
+	/**
+	 * Pomera liniju za unete x i y vrednosti pomerajuæi poèetne i krajnje taèke linije putem metode pomeriZa i klase Taèka
+	 * @param poX
+	 * @param poY
+	 */
 	public void pomeriZa (int poX, int poY){
 		tPocetna.pomeriZa(poX, poY);
 		tKrajnja.pomeriZa(poX, poY);
+	}
+	
+	public Tacka sredina(){
+		int xSredine = (tPocetna.getX()+tKrajnja.getX())/2;
+		int ySredine = (tPocetna.getY()+tKrajnja.getY())/2;
+		Tacka sredinaLinije = new Tacka (xSredine, ySredine);
+		return sredinaLinije;
+	}
+	
+	public String toString(){
+		String s = "(" + tPocetna.getX() + ", " + tPocetna.getY() + ") -> (" + tKrajnja.getX() + ", " + tKrajnja.getY() + ")";
+		return s;
 	}
 	
 }

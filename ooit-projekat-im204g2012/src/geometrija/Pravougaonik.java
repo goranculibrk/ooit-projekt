@@ -2,24 +2,24 @@ package geometrija;
 
 public class Pravougaonik {
 
-	private Linija lSirina;
-	private Linija lVisina;
+	private int sirina;
+	private int visina;
 	private Tacka tGoreLevo;
 	private String boja;
 	
 	/* Get Set metode */
 	
-	public Linija getlSirina() {
-		return lSirina;
+	public int getlSirina() {
+		return sirina;
 	}
-	public void setlSirina(Linija lSirina) {
-		this.lSirina = lSirina;
+	public void setlSirina(int lSirina) {
+		this.sirina = lSirina;
 	}
-	public Linija getlVisina() {
-		return lVisina;
+	public int getlVisina() {
+		return visina;
 	}
-	public void setlVisina(Linija lVisina) {
-		this.lVisina = lVisina;
+	public void setlVisina(int lVisina) {
+		this.visina = lVisina;
 	}
 	public Tacka gettGoreLevo() {
 		return tGoreLevo;
@@ -36,15 +36,15 @@ public class Pravougaonik {
 	
 	/* Konstruktori */
 	
-	public Pravougaonik(Tacka iGoreLevo, Linija iVisina, Linija iSirina) {
-		lVisina = iVisina;
-		lSirina = iSirina;
+	public Pravougaonik(Tacka iGoreLevo, int iVisina, int iSirina) {
+		visina = iVisina;
+		sirina = iSirina;
 		tGoreLevo = iGoreLevo;
 	}
 	
-	public Pravougaonik(Tacka iGoreLevo, Linija iVisina, Linija iSirina, String iBoja){
-		lVisina = iVisina;
-		lSirina = iSirina;
+	public Pravougaonik(Tacka iGoreLevo, int iVisina, int iSirina, String iBoja){
+		visina = iVisina;
+		sirina = iSirina;
 		tGoreLevo = iGoreLevo;
 		boja = iBoja;
 	}
@@ -52,13 +52,38 @@ public class Pravougaonik {
 	/* Metode */
 	
 	public double povrsina(){
-		double p = lSirina.duzina()*lVisina.duzina();
+		double p = sirina*visina;
 		return p;
 	}
 	
 	public double obim(){
-		double o = 2*lSirina.duzina() + 2*lVisina.duzina();
+		double o = 2*sirina + 2*visina;
 		return o;
+	}
+	
+	/**
+	 * @return vraca objekat klase Linija koji se pravi putem tacke tGoreLevo 
+	 *  i nove tacke tDoleDesno
+	 */
+	public Linija dijagonala (){
+		int xDoleDesno = (tGoreLevo.getX() + sirina);
+		int yDoleDesno = (tGoreLevo.getY() + visina);
+		
+		Tacka tDoleDesno = new Tacka (xDoleDesno, yDoleDesno);
+		Linija dijagonala = new Linija (tGoreLevo, tDoleDesno);
+		
+		return dijagonala;
+		
+	}
+	
+	public Tacka centar(){
+		return this.dijagonala().sredina();
+	}
+	
+	public String toString(){
+		String s = "gornji levi ugao = (" + tGoreLevo.getX() + ", " + tGoreLevo.getY() + "), širina = " + sirina + ", visina = " + visina;
+		return s;
+		
 	}
 	
 }

@@ -19,7 +19,7 @@ public class Test {
 			Linija l1 = new Linija (t1, t2);
 			Linija l2 = new Linija (t3, t4);
 			
-			Pravougaonik p1 = new Pravougaonik (t1, l1, l2);
+			Pravougaonik p1 = new Pravougaonik (t1, 10, 5);
 			
 			System.out.println(p1.povrsina());
 			System.out.println(p1.obim());
