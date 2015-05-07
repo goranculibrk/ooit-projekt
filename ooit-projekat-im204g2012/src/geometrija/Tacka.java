@@ -5,6 +5,7 @@ public class Tacka {
 	private int x;
 	private int y;
 	
+	
 	public Tacka(int i, int j) {
 		x = i;
 		y = j;

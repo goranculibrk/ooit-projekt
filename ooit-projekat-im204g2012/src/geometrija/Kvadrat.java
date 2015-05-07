@@ -1,8 +1,8 @@
 package geometrija;
 
 public class Kvadrat {
-	Tacka tGoreLevo;
-	Linija lStranica;
+	private Tacka tGoreLevo;
+	private Linija lStranica;
 	
 	public Tacka gettGoreLevo() {
 		return tGoreLevo;

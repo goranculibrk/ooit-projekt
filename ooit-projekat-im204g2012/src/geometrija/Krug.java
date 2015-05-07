@@ -2,8 +2,8 @@ package geometrija;
 
 public class Krug {
 
-	Tacka centar;
-	int poluprecnik;
+	private Tacka centar;
+	private int poluprecnik;
 	
 	public Tacka getCentar() {
 		return centar;

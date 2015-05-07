@@ -2,8 +2,8 @@ package geometrija;
 
 public class Linija {
 
-	Tacka tPocetna;
-	Tacka tKrajnja;
+	private Tacka tPocetna;
+	private Tacka tKrajnja;
 	
 	public Linija(Tacka iPocetna, Tacka iKrajnja) {
 		tPocetna = iPocetna;

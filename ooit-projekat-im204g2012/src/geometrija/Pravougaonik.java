@@ -2,9 +2,9 @@ package geometrija;
 
 public class Pravougaonik {
 
-	Linija lSirina;
-	Linija lVisina;
-	Tacka tGoreLevo;
+	private Linija lSirina;
+	private Linija lVisina;
+	private Tacka tGoreLevo;
 	
 	public Pravougaonik(Linija iVisina, Linija iSirina) {
 		lVisina = iVisina;
