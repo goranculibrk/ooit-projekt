@@ -2,7 +2,7 @@ package geometrija;
 
 import java.awt.Graphics;
 
-public class Linija extends Oblik {
+public class Linija extends Oblik implements Comparable{
 
 	/* Varijable */
 	
@@ -83,7 +83,13 @@ public class Linija extends Oblik {
 	public void crtajSe(Graphics g){
 		g.setColor(pronadjiBoju(getBoja()));
 		g.drawLine(tPocetna.getX(), tPocetna.getY(), tKrajnja.getX(), tKrajnja.getY());
-	}	
+	}
+	
+	public int compareTo(Object obj){
+		Linija pomocna = (Linija) obj;
+		int rez = (int) (duzina() - pomocna.duzina());
+		return rez;
+	}
 	
 }
 

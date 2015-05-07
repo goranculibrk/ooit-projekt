@@ -18,5 +18,4 @@ public abstract class PovrsinskiOblik extends Oblik {
 	public abstract boolean sadrzi(int x, int y);
 	public abstract double povrsina();
 	public abstract double obim();
-	
 }

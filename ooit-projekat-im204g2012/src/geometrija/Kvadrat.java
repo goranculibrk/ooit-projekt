@@ -2,7 +2,7 @@ package geometrija;
 
 import java.awt.Graphics;
 
-public class Kvadrat extends PovrsinskiOblik{
+public class Kvadrat extends PovrsinskiOblik implements Comparable{
 
 	/* Varijable */
 	
@@ -105,5 +105,11 @@ public class Kvadrat extends PovrsinskiOblik{
 		// TODO Auto-generated method stub
 		if(x >= tGoreLevo.getX() && x <= tGoreLevo.getX()+stranica && y >= tGoreLevo.getY() && y <= tGoreLevo.getY()+stranica) return true;
 		else return false;
+	}
+	
+	public int compareTo(Object obj){
+		Kvadrat pomocni = (Kvadrat) obj;
+		int rez = (int) (povrsina() - pomocni.povrsina());
+		return rez;
 	}
 }

@@ -2,7 +2,7 @@ package geometrija;
 
 import java.awt.Graphics;
 
-public class Tacka extends Oblik{
+public class Tacka extends Oblik implements Comparable{
 
 	/* Varijable */
 	
@@ -74,6 +74,15 @@ public class Tacka extends Oblik{
 		g.setColor(pronadjiBoju(getBoja()));
 		g.drawLine(x-1, y-1, x+1, y+1);
 		g.drawLine(x+1, y-1, x-1, y+1);
+	}
+	@Override
+	public int compareTo(Object obj) {
+		
+		Tacka pomocna = (Tacka) obj;
+		Tacka nulta = new Tacka(0, 0);
+		int rez = (int) (udaljenost(nulta)-pomocna.udaljenost(nulta));
+		
+		return rez;
 	}
 	
 }

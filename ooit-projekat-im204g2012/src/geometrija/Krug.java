@@ -2,7 +2,7 @@ package geometrija;
 
 import java.awt.Graphics;
 
-public class Krug extends PovrsinskiOblik{
+public class Krug extends PovrsinskiOblik implements Comparable{
 
 	/* Varijable */
 	
@@ -83,6 +83,12 @@ public class Krug extends PovrsinskiOblik{
 		if (d <= poluprecnik) return true;
 		
 		else return false;
+	}
+	
+	public int compareTo(Object obj){
+		Krug pomocni = (Krug) obj;
+		int rez = (int) (povrsina()-pomocni.povrsina());
+		return rez;
 	}
 	
 }

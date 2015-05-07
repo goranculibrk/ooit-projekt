@@ -80,4 +80,10 @@ public class Pravougaonik extends Kvadrat {
 		}else return false;
 	}
 	
+	public int compareTo(Object obj){
+		Pravougaonik pomocni = (Pravougaonik) obj;
+		int rez = (int) (povrsina() - pomocni.povrsina());
+		return rez;
+	}
+	
 }
