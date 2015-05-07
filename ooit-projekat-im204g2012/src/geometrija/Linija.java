@@ -4,11 +4,11 @@ public class Linija {
 
 	private Tacka tPocetna;
 	private Tacka tKrajnja;
+	private String boja;
 	
-	public Linija(Tacka iPocetna, Tacka iKrajnja) {
-		tPocetna = iPocetna;
-		tKrajnja = iKrajnja;
-	}
+
+	/* Get Set metode */
+	
 	public Tacka getPocetna() {
 		return tPocetna;
 	}
@@ -21,6 +21,27 @@ public class Linija {
 	public void setKrajnja(Tacka krajnja) {
 		this.tKrajnja = krajnja;
 	}
+	public String getBoja() {
+		return boja;
+	}
+	public void setBoja(String boja) {
+		this.boja = boja;
+	}
+
+	/* Konstruktori */
+	
+	public Linija(Tacka iPocetna, Tacka iKrajnja) {
+		tPocetna = iPocetna;
+		tKrajnja = iKrajnja;
+	}
+	
+	public Linija(Tacka iPocetna, Tacka iKrajnja, String iBoja){
+		tPocetna = iPocetna;
+		tKrajnja = iKrajnja;
+		boja = iBoja;
+	}
+	
+	/* Metode */
 	
 	public double duzina()
 	{

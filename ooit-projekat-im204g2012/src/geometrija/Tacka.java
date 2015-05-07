@@ -4,12 +4,10 @@ public class Tacka {
 	
 	private int x;
 	private int y;
+	private String boja;
 	
-	
-	public Tacka(int i, int j) {
-		x = i;
-		y = j;
-	}
+	/* Get Set metode */
+		
 	public int getX() {
 		return x;
 	}
@@ -22,6 +20,27 @@ public class Tacka {
 	public void setY(int y) {
 		this.y = y;
 	}
+	public String getBoja() {
+		return boja;
+	}
+	public void setBoja(String boja) {
+		this.boja = boja;
+	}
+	
+	/* Konstruktori */
+	
+	public Tacka(int iX, int iY) {
+		x = iX;
+		y = iY;
+	}
+	
+	public Tacka(int iX, int iY, String iBoja){
+		x = iX;
+		y = iY;
+		boja = iBoja;
+	}
+	
+	/* Metode */
 	
 	public void pomeriNa (int novoX, int novoY){
 		this.x = novoX;

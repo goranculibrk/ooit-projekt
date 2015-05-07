@@ -5,11 +5,10 @@ public class Pravougaonik {
 	private Linija lSirina;
 	private Linija lVisina;
 	private Tacka tGoreLevo;
+	private String boja;
 	
-	public Pravougaonik(Linija iVisina, Linija iSirina) {
-		lVisina = iVisina;
-		lSirina = iSirina;
-	}
+	/* Get Set metode */
+	
 	public Linija getlSirina() {
 		return lSirina;
 	}
@@ -28,6 +27,29 @@ public class Pravougaonik {
 	public void settGoreLevo(Tacka tGoreLevo) {
 		this.tGoreLevo = tGoreLevo;
 	}
+	public String getBoja() {
+		return boja;
+	}
+	public void setBoja(String boja) {
+		this.boja = boja;
+	}
+	
+	/* Konstruktori */
+	
+	public Pravougaonik(Tacka iGoreLevo, Linija iVisina, Linija iSirina) {
+		lVisina = iVisina;
+		lSirina = iSirina;
+		tGoreLevo = iGoreLevo;
+	}
+	
+	public Pravougaonik(Tacka iGoreLevo, Linija iVisina, Linija iSirina, String iBoja){
+		lVisina = iVisina;
+		lSirina = iSirina;
+		tGoreLevo = iGoreLevo;
+		boja = iBoja;
+	}
+	
+	/* Metode */
 	
 	public double povrsina(){
 		double p = lSirina.duzina()*lVisina.duzina();

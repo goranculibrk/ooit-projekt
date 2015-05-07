@@ -3,6 +3,10 @@ package geometrija;
 public class Kvadrat {
 	private Tacka tGoreLevo;
 	private Linija lStranica;
+	private String boja;
+	
+	
+	/* Get Set metode */
 	
 	public Tacka gettGoreLevo() {
 		return tGoreLevo;
@@ -20,10 +24,28 @@ public class Kvadrat {
 		this.lStranica = lStranica;
 	}
 
+	public String getBoja() {
+		return boja;
+	}
+
+	public void setBoja(String boja) {
+		this.boja = boja;
+	}
+
+	/* Konstruktori */
+	
 	public Kvadrat (Tacka iGoreLevo, Linija iStranica){
 		tGoreLevo = iGoreLevo;
 		lStranica = iStranica;
 	}
+	
+	public Kvadrat (Tacka iGoreLevo, Linija iStranica, String iBoja){
+		tGoreLevo = iGoreLevo;
+		lStranica = iStranica;
+		boja = iBoja;
+	}
+	
+	/* Metode */
 	
 	public double povrsina(){
 		double rez = lStranica.duzina()*lStranica.duzina();
