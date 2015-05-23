@@ -1,41 +1,35 @@
 package geometrija;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
-import java.awt.ScrollPane;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
+
+import java.awt.BorderLayout;
+
 import javax.swing.DefaultListModel;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
-import javax.swing.JList;
-import javax.swing.ScrollPaneLayout;
+import javax.swing.JLabel;
 import javax.swing.SwingConstants;
-
-import java.awt.SystemColor;
-
-import javax.swing.border.BevelBorder;
-import javax.swing.JScrollPane;
 import javax.swing.JButton;
+import javax.swing.JList;
+import javax.swing.JScrollPane;
+
+
 
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyAdapter;
+import java.util.Arrays;
 
-public class Stack extends JFrame{
+public class Sortiranje {
 
-	private JFrame frmStack;
-	private JPanel contentPane;
+	private JFrame frame;
 	private JTextField tfXPocetne;
 	private JTextField tfYPocetne;
 	private JTextField tfXKrajnje;
 	private JTextField tfYKrajnje;
 	DefaultListModel dlm = new DefaultListModel();
-	
 	/**
 	 * Launch the application.
 	 */
@@ -43,8 +37,8 @@ public class Stack extends JFrame{
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Stack window = new Stack();
-					window.frmStack.setVisible(true);
+					Sortiranje window = new Sortiranje();
+					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -55,7 +49,7 @@ public class Stack extends JFrame{
 	/**
 	 * Create the application.
 	 */
-	public Stack() {
+	public Sortiranje() {
 		initialize();
 	}
 
@@ -63,13 +57,12 @@ public class Stack extends JFrame{
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		frmStack = new JFrame();
-		frmStack.setTitle("Stack");
-		frmStack.setBounds(100, 100, 400, 650);
-		frmStack.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame = new JFrame();
+		frame.setBounds(100, 100, 400, 650);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JPanel panel = new JPanel();
-		frmStack.getContentPane().add(panel, BorderLayout.CENTER);
+		frame.getContentPane().add(panel, BorderLayout.CENTER);
 		panel.setLayout(null);
 		
 		tfXPocetne = new JTextField();
@@ -92,54 +85,53 @@ public class Stack extends JFrame{
 		panel.add(tfYKrajnje);
 		tfYKrajnje.setColumns(10);
 		
-		JLabel lblXPoetneTake = new JLabel("X po\u010Detne ta\u010Dke");
-		lblXPoetneTake.setHorizontalAlignment(SwingConstants.CENTER);
-		lblXPoetneTake.setBounds(10, 23, 165, 14);
-		panel.add(lblXPoetneTake);
+		JLabel lblXPocetne = new JLabel("X Po\u010Detne ta\u010Dke");
+		lblXPocetne.setHorizontalAlignment(SwingConstants.CENTER);
+		lblXPocetne.setBounds(10, 26, 165, 14);
+		panel.add(lblXPocetne);
 		
-		JLabel lblYPoetneTake = new JLabel("Y po\u010Detne ta\u010Dke");
+		JLabel lblYPoetneTake = new JLabel("Y Po\u010Detne ta\u010Dke");
 		lblYPoetneTake.setHorizontalAlignment(SwingConstants.CENTER);
-		lblYPoetneTake.setBounds(209, 23, 165, 14);
+		lblYPoetneTake.setBounds(209, 26, 165, 14);
 		panel.add(lblYPoetneTake);
 		
-		JLabel lblXKrajnjeTake = new JLabel("X krajnje ta\u010Dke");
+		JLabel lblXKrajnjeTake = new JLabel("X Krajnje ta\u010Dke");
 		lblXKrajnjeTake.setHorizontalAlignment(SwingConstants.CENTER);
 		lblXKrajnjeTake.setBounds(10, 97, 165, 14);
 		panel.add(lblXKrajnjeTake);
 		
-		JLabel lblYPoetneTake_1 = new JLabel("Y po\u010Detne ta\u010Dke");
-		lblYPoetneTake_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblYPoetneTake_1.setBounds(209, 97, 165, 14);
-		panel.add(lblYPoetneTake_1);
+		JLabel lblYKrajnjeTake = new JLabel("Y Krajnje ta\u010Dke");
+		lblYKrajnjeTake.setHorizontalAlignment(SwingConstants.CENTER);
+		lblYKrajnjeTake.setBounds(209, 97, 165, 14);
+		panel.add(lblYKrajnjeTake);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 292, 364, 277);
+		scrollPane.setBounds(10, 269, 364, 299);
 		panel.add(scrollPane);
-		
-		JList list = new JList();
+		JList list = new JList();		
 		scrollPane.setViewportView(list);
 		list.setModel(dlm);
 		
-		JButton btnDodaj = new JButton("Dodaj na stack");
-		btnDodaj.addActionListener(new ActionListener() {
+		JButton btnDodajNaListu = new JButton("Dodaj na listu");
+		btnDodajNaListu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
 				try{
 					int xPocetne = Integer.parseInt(tfXPocetne.getText());
 					int yPocetne = Integer.parseInt(tfYPocetne.getText());
 					int xKrajnje = Integer.parseInt(tfXKrajnje.getText());
 					int yKrajnje = Integer.parseInt(tfYKrajnje.getText());
-					Tacka pocetna = new Tacka (xPocetne, yPocetne);
-					Tacka krajnja = new Tacka (xKrajnje, yKrajnje);
-					Linija l = new Linija (pocetna, krajnja);
 					
+					Tacka pocetna = new Tacka(xPocetne, yPocetne);
+					Tacka krajnja = new Tacka(xKrajnje, yKrajnje);
+					
+					Linija linija = new Linija(pocetna, krajnja);
 					if(xPocetne < 0 || yPocetne < 0 || xKrajnje < 0 || yKrajnje < 0){
 						JOptionPane.showMessageDialog(null,"Unesi realnu vrednost","Error",JOptionPane.ERROR_MESSAGE);
 					}
 					else if(xPocetne == xKrajnje && yKrajnje == yPocetne){
 						JOptionPane.showMessageDialog(null, "Pogresno unete pocetna i krajnja tacka", "Error", JOptionPane.ERROR_MESSAGE);
 					}
-					else dlm.add(0,l);
+					else dlm.add(0,linija);
 					
 					tfXPocetne.setText(null);
 					tfYPocetne.setText(null);
@@ -156,15 +148,13 @@ public class Stack extends JFrame{
 						tfXPocetne.grabFocus();
 						// TODO: handle exception
 					}
-					
 				}
 		});
-		btnDodaj.setBounds(10, 175, 364, 23);
-		panel.add(btnDodaj);
+		btnDodajNaListu.setBounds(10, 167, 364, 23);
+		panel.add(btnDodajNaListu);
 		
-		
-		JButton btnObrisiPoljaUnosa = new JButton("Obri\u0161i polja unosa");
-		btnObrisiPoljaUnosa.addActionListener(new ActionListener() {
+		JButton btnObriiUnetaPolja = new JButton("Obri\u0161i uneta polja");
+		btnObriiUnetaPolja.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				tfXKrajnje.setText(null);
 				tfYKrajnje.setText(null);
@@ -172,29 +162,40 @@ public class Stack extends JFrame{
 				tfYPocetne.setText(null);
 			}
 		});
+		btnObriiUnetaPolja.setBounds(10, 201, 364, 23);
+		panel.add(btnObriiUnetaPolja);
 		
-		btnObrisiPoljaUnosa.setBounds(10, 209, 364, 23);
-		panel.add(btnObrisiPoljaUnosa);
-		
-		JButton btdUkloni = new JButton("Ukloni poslednji element");
-		btdUkloni.addActionListener(new ActionListener() {
+		JButton btnSortiraj = new JButton("Sortiraj");
+		btnSortiraj.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				dlm.remove(0);
-			}
-		});
-		btdUkloni.setBounds(10, 243, 364, 23);
-		panel.add(btdUkloni);
-		
-		JButton btnNewButton = new JButton("Obri\u0161i sve");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				for(int i=0; i < dlm.size() + 1; i++){
-					dlm.remove(0);
+				
+				Object[] obj = dlm.toArray();
+				
+				Arrays.sort(obj);
+				
+				dlm.clear();
+				
+				for(int i=0; i < obj.length; i++){
+					dlm.addElement(obj[i]);
 				}
+				
+				if(dlm.isEmpty()){
+					JOptionPane.showMessageDialog(null, "Ne možete sortirati. Prazan niz.", "Error", JOptionPane.ERROR_MESSAGE);
+				}
+				
+				
 			}
 		});
-		btnNewButton.setBounds(10, 580, 364, 23);
-		panel.add(btnNewButton);
+		btnSortiraj.setBounds(10, 235, 364, 23);
+		panel.add(btnSortiraj);
 		
+		JButton btnObriiListu = new JButton("Obri\u0161i listu");
+		btnObriiListu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dlm.clear();
+			}
+		});
+		btnObriiListu.setBounds(10, 577, 364, 23);
+		panel.add(btnObriiListu);
 	}
 }

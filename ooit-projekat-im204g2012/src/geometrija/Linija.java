@@ -68,7 +68,7 @@ public class Linija extends Oblik implements Comparable{
 	}
 	
 	public String toString(){
-		String s = "(" + tPocetna.getX() + ", " + tPocetna.getY() + ") -> (" + tKrajnja.getX() + ", " + tKrajnja.getY() + ")";
+		String s = "(" + tPocetna.getX() + ", " + tPocetna.getY() + ") -> (" + tKrajnja.getX() + ", " + tKrajnja.getY() + ")" + "   Duina: " + duzina();
 		return s;
 	}
 	
