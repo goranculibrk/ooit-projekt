@@ -5,7 +5,7 @@ public class Pravougaonik extends Kvadrat {
 	/* Varijable */
 	
 	private int sirina;
-	private Tacka tGoreLevo;
+
 	
 	/* Get Set metode */
 	

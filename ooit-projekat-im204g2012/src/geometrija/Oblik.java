@@ -8,6 +8,7 @@ public abstract class Oblik {
 	/* Varijable */
 	
 	private String boja;
+	private boolean selektovan;
 
 	/* Get Set Metode */
 	public String getBoja() {
@@ -16,6 +17,13 @@ public abstract class Oblik {
 
 	public void setBoja(String boja) {
 		this.boja = boja;
+	}
+	
+	public boolean isSelektovan() {
+		return selektovan;
+	}
+	public void setSelektovan(boolean selektovan) {
+		this.selektovan = selektovan;
 	}
 	
 	/* Konstruktori */
